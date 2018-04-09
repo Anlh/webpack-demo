@@ -2,4 +2,8 @@
 Create a new project to practice the webpack getting started guide
 
 <h2>List of commands to run on the CLI<h2>
-1. npm run build - Script to build project (creates a bundle with all the dependencies and generate a file "build.js")
+<dl>
+    <dt>npm run build</dt>
+    <dd>Script to build project (creates a bundle with all the dependencies and generate a file "build.js")</dd>
+</dl>
+
