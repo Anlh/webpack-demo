@@ -26,12 +26,19 @@ module.exports = {
                         }
                     },
                     {
-                        // Image loader
+                        // Image loader to optimize the images
                         loader: 'image-webpack-loader',
                         options: {
                             bypassOnDebug: true,
                         },
                     }
+                ]
+            },
+            // User file loader to handle font files
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    'file-loader'
                 ]
             }
         ]
