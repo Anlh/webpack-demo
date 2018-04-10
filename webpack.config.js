@@ -5,9 +5,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     entry: {
         app: './src/index.js',
-        print2: './src/print.js'
+        print: './src/print.js'
         //base: ['./src/index.js', './src/print.js'] //Create a new bundle gathering these 2 scripts
     },
+    devtool: 'inline-source-map', // Generate source maps, allow us to debug the bundles in the browser
     plugins: [
         // Este plugin permite que ao alterarmos as nossas entries,
         // Que crie automaticamente um novo html com as novas dependencias, eliminando as antigas, sem termos que fazer isto
