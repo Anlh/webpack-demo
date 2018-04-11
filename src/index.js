@@ -3,6 +3,7 @@
  * read this https://webpack.js.org/guides/getting-started/#modules to learn how to do it*/
 import _ from 'lodash';
 import printMe from './print.js';
+import './styles.css';
 
 
 function component() {
@@ -20,5 +21,17 @@ function component() {
     return element;
 }
 
-document.body.appendChild(component());
+let element = component();
+document.body.appendChild(element);
+
+if (module.hot) {
+    module.hot.accept('./print.js', function () {
+        console.log('Accepting the updated printMe module!');
+
+        // In order to see the changes in the DOM with the hot module replacement feature, we need to re render the component
+        document.body.removeChild(element);
+        element = component(); // Re render the "component" to update the click handler
+        document.body.appendChild(element);
+    })
+}
 
